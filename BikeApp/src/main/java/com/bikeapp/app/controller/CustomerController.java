@@ -41,7 +41,7 @@ public class CustomerController {
 	}
  
 	@GetMapping(value="/findbylastname/{lastName}",  produces=MediaType.APPLICATION_JSON_VALUE)
-	public List<Customer> findByLastName(@PathVariable String lastName) {
+	public List<Customer> findByLastName(@PathVariable("lastName") String lastName) {
  
 		List<Customer> customers = repository.findByLastName(lastName);
 		return customers;
